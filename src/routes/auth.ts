@@ -4,6 +4,7 @@ const router = Router();
 
 // serve per il refresh del token
 router.get("/refresh", async (req, res) => {
+    // #swagger.tags = ['auth']
     const params = new URLSearchParams();
     params.append("grant_type", "refresh_token");
     params.append("client_id", "aptismart-keycloak");
@@ -29,6 +30,7 @@ const REDIRECT_URI = 'http://localhost:5173/dashboard';
 
 //api per scambiare il code che riceve il front end dopo che si è loggato con google in access_token e refresh_token.
 router.get('/get-token', async (req, res) => {
+    // #swagger.tags = ['auth']
     const code = req.query.code;
 
     if (!code) {

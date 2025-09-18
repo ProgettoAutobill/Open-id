@@ -2,8 +2,9 @@ import { Router } from "express";
 
 const router = Router();
 
-// Login con crendeziali "username" e "password" configurate in keycloak
+
 router.post("/login", async (req, res) => {
+// #swagger.tags = ['auth']
 
     try {
         const { username, password } = req.body;
